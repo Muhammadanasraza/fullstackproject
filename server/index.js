@@ -1,3 +1,5 @@
+// PUtNVZIq2S5ixfJ7
+// anusm9722
 import express from "express";
 import dotenv from "dotenv";
 import connectDB from "./database/db.js";
@@ -21,11 +23,10 @@ app.use(
   })
 );
 
-
 // apis
 app.use("/api/v1/user", user);
 
 
 app.listen(PORT, () => {
-  console.log(`Server listen at port ${PORT}`);
+  console.log(`Server Is PORT se sun raha hai ${PORT}`);
 });

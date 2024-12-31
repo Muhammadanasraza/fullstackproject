@@ -25,7 +25,12 @@ app.use(
 
 // apis
 app.use("/api/v1/user", user);
-
+// app.get("/register", (_, res) => {
+//   res.status(200).json({
+//     succes: true,
+//     message: "Hello im From Backend"
+//   })
+// })
 
 app.listen(PORT, () => {
   console.log(`Server Is PORT se sun raha hai ${PORT}`);

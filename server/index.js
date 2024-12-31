@@ -1,10 +1,10 @@
-// PUtNVZIq2S5ixfJ7
-// anusm9722
 import express from "express";
 import dotenv from "dotenv";
 import connectDB from "./database/db.js";
 import user from "./routers/user.route.js";
-import cors from "cors"
+import course from "./routers/course.route.js";
+import batch from "./routers/batch.route.js";
+import cors from "cors";
 
 dotenv.config({});
 
@@ -12,7 +12,7 @@ dotenv.config({});
 connectDB();
 const app = express();
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 3000;
 
 // default middleware
 app.use(express.json());
@@ -23,15 +23,11 @@ app.use(
   })
 );
 
-// apis
+// apis routers
 app.use("/api/v1/user", user);
-// app.get("/register", (_, res) => {
-//   res.status(200).json({
-//     succes: true,
-//     message: "Hello im From Backend"
-//   })
-// })
+app.use("/api/v1/course", course);
+app.use("/api/v1/batch", batch);
 
 app.listen(PORT, () => {
-  console.log(`Server Is PORT se sun raha hai ${PORT}`);
+  console.log(`Server listen at port ${PORT}`);
 });

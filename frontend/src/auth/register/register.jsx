@@ -14,7 +14,6 @@ const Register = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phoneNumber: '',
     password: '',
   })
   const [isLoading, setIsLoading] = useState(false)
@@ -57,7 +56,7 @@ const Register = () => {
         title: "Registration Successful",
         description: "Your account has been created.",
       })
-      navigate("/login  ")
+      navigate("/login")
     } catch (error) {
       console.error('Registration error:', error)
       toast({

@@ -7,6 +7,8 @@ import {
 } from "../controllers/user.controller.js";
 import isAuthenticated from "../middlewares/isAuthenticated.js";
 
+import isAuthenticated from "../middlewares/isAuthenticated.js";
+
 const router = express.Router();
 
 // 1. For signup a user

@@ -1,5 +1,4 @@
 'use client'
-
 import React, { useEffect, useState } from "react";
 import { auth } from "@/auth/utils/authutils";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -10,7 +9,7 @@ import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
 import { GraduationCap, Calendar, Edit, Save } from 'lucide-react';
 
-// Mock data for enrolled courses and attendance history
+
 const courses = [
   {
     title: "Web and Mobile App Development",
@@ -54,7 +53,7 @@ const courses = [
     city: "Islamabad",
     campus: "Main",
   },
-];
+]
 
 const attendanceHistory = [
   { id: 1, date: "2023-03-15", course: "Introduction to React", status: "Present" },
@@ -108,12 +107,14 @@ export default function ProfilePage() {
     setEditedUser({ ...editedUser, [name]: value });
   };
 
+
+
   if (!user) {
     return <div className="text-center mt-8">Loading...</div>;
   }
 
   return (
-    <div className="max-w-screen-xl container mx-auto p-4 space-y-6">
+    <div className="max-w-screen-xl  container mx-auto p-4 space-y-6">
       <Card>
         <CardHeader>
           <div className="flex items-center space-x-4">
@@ -157,6 +158,8 @@ export default function ProfilePage() {
                   <p className="text-sm text-gray-500">City: {user.city || "N/A"}</p>
                 </>
               )}
+
+           
             </div>
             <Button onClick={isEditing ? handleSave : handleEdit}>
               {isEditing ? <Save className="h-4 w-4 mr-2" /> : <Edit className="h-4 w-4 mr-2" />}
@@ -181,7 +184,7 @@ export default function ProfilePage() {
                 className="absolute inset-0 w-full h-full object-cover rounded-xl object-center"
                 src="https://img.freepik.com/free-psd/back-school-new-normal-banner_23-2149027689.jpg"
               />
-              <Card className="relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100 transition-opacity duration-300">
+              <Card className=" relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100 transition-opacity duration-300">
                 <CardHeader>
                   <CardTitle className="text-2xl font-bold">
                     {course.title}
@@ -214,6 +217,7 @@ export default function ProfilePage() {
             </div>
           ))}
         </div>
+
       </Card>
 
       <Card>
@@ -228,9 +232,8 @@ export default function ProfilePage() {
               <li key={record.id} className="flex justify-between items-center">
                 <span>{record.date}</span>
                 <span>{record.course}</span>
-                <span className={`font-semibold ${
-                  record.status === 'Present' ? 'text-green-600' : 'text-red-600'
-                }`}>
+                <span className={`font-semibold ${record.status === 'Present' ? 'text-green-600' : 'text-red-600'
+                  }`}>
                   {record.status}
                 </span>
               </li>

@@ -107,25 +107,4 @@ export const getUserProfile = async (req, res) => {
 };
 
 
-export const getUserProfile = async (req, res) => {
-  try {
-    const userId = req.id;
-    const user = await UserModal.findById(userId).select("-password");
-    if (!user) {
-      return res.status(404).json({
-        success: false,
-        message: "profile is",
-      });
-    } else {
-
-    }
-
-  } catch (error) {
-    console.log(error);
-    return res.status(500).json({
-      success: false,
-      message: "Failed load User",
-    });
-  }
-};
 
